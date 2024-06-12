@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background: black;
+  color: white;
+}
+
+.perspective {
+  perspective: 800px;
+}
+
+.crawl {
+  position: absolute;
+  bottom: 0; /* クロールの開始位置を下に設定 */
+  width: 80%; /* 初期横幅を広く */
+  max-width: 80%;
+  transform-origin: 50% 100%; /* クロールの中心を設定 */
+  animation-name: crawl;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  text-align: center;
+}
+
+@keyframes crawl {
+  0% {
+    transform: rotateX(20deg) translateY(100%);
+  }
+  100% {
+    transform: rotateX(20deg) translateY(-1300%) scale(0.5);
+  }
+}
