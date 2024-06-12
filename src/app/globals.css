@@ -28,6 +28,6 @@ body {
     transform: rotateX(20deg) translateY(100%);
   }
   100% {
-    transform: rotateX(20deg) translateY(-1300%) scale(0.5);
+    transform: rotateX(20deg) translateY(-1000%) scale(0.5);
   }
 }

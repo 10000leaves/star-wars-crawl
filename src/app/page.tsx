@@ -16,15 +16,9 @@ const App: React.FC = () => {
   const [crawlTime, setCrawlTime] = useState(10); // 初期表示時間10秒
 
   const [isStarted, setIsStarted] = useState(false);
-  const [animationSpeed, setAnimationSpeed] = useState(1); // 初期速度を1に設定
   const [stage, setStage] = useState(0); // 0: 初期状態, 1: OpeningText, 2: Logo, 3: Crawl
 
   const handleStart = () => {
-    // 速度設定
-    const lineCount = crawlText.split('\n').length;
-    const speed = lineCount <= 10 ? 1 : lineCount / 10; // 10行以下は速度1、それ以上は行数/10の速度
-    setAnimationSpeed(speed);
-
     // 表示開始
     setIsStarted(true);
     setStage(1);
@@ -123,7 +117,7 @@ const App: React.FC = () => {
         <>
           {stage === 1 && <Opening text={openingText} />}
           {stage === 2 && <Logo text={logoText} time={logoTime} />}
-          {stage === 3 && <Crawl text={crawlText} time={crawlTime} speed={animationSpeed} />}
+          {stage === 3 && <Crawl text={crawlText} time={crawlTime} />}
         </>
       )}
     </div>
